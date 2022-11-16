@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    prikaziZaposlene();
-    dodajZaposlenog();
-    obrisiZaposlenog();
+    prikaziPutnike();
+    dodajPutnika();
+    obrisiPutnika();
 });
 
 
-function prikaziZaposlene() {
+function prikaziPutnike() {
 
     $.ajax(
         {
@@ -19,13 +19,13 @@ function prikaziZaposlene() {
     )
 }
 
-function dodajZaposlenog() {
+function dodajPutnika() {
 
     $(document).on('click', '#btn_save', function () {
 
         var ime = $('#addime').val();
         var prezime = $('#addprezime').val();
-        var kompanija = $('#addvoznja').val();
+        var voznja = $('#addvoznja').val();
 
 
         if (ime == '' || prezime == '' || voznja == '') {
