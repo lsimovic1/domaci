@@ -2,6 +2,8 @@ $(document).ready(function () {
     prikaziPutnike();
     dodajPutnika();
     obrisiPutnika();
+    vratiPutnika();
+    azurirajPutnika();
 });
 
 
@@ -71,4 +73,63 @@ function obrisiPutnika() {
             }
         })
     })
+}
+
+function vratiPutnika() {
+
+    $(document).on('click', '#btn_edit', function () {
+
+        var id = $(this).attr('value');
+
+        $.ajax({
+            url: 'crud/get.php',
+            method: 'post',
+            data: { id: id },
+            dataType: 'json',
+
+            success: function (data) {
+                $('#izmenaPutnika').modal('show');
+                $('#putnik_id').val(data.id);
+                $('#upd_ime').val(data.ime);
+                $('#upd_prezime').val(data.prezime);
+                $('#upd_voznja').val(data.voznja_id);
+            }
+        });
+    })
+
+}
+
+
+function azurirajPutnika() {
+
+    $(document).on('click', '#btn_update', function () {
+
+
+        var id = $('#voznja_id').val();
+        var ime = $('#upd_ime').val();
+        var prezime = $('#upd_prezime').val();
+        var voznja = $('#upd_voznja').val();
+
+        if (id == '' || ime == '' || prezime == '' || voznja == '') {
+            $('#upd_praznaPolja').slideDown().delay(1500).fadeOut('slow');
+        }
+        else {
+
+            $.ajax({
+                url: 'crud/update.php',
+                method: 'post',
+                data: {
+                    id: id,
+                    ime: ime,
+                    prezime: prezime,
+                    voznja: voznja,
+                },
+
+                success: function (data) {
+                    $('#upd_uspesnoSacuvan').fadeIn().html(data).delay(1800).fadeOut('slow');
+                    prikaziPutnike();
+                }
+            })
+        }
+    });
 }
