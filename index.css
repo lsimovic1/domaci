@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Mandali&display=swap');
+
+* {
+    font-family: 'Mandali',
+        sans-serif;
+    font-size: 20px;
+}
+
+/* index.php fajl  */
+h1 {
+    text-align: center;
+    font-size: 55px;
+    margin-top: 250px;
+}
+
+.putnicidiv {
+    margin-top: 80px;
+}
+
+.putnicidiv {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.putnicidiv button {
+    width: 300px;
+    height: 100px;
+    border-radius: 25px;
+}
+
+/* index.php fajl  */
+
