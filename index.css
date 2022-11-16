@@ -53,3 +53,10 @@ h1 {
     margin-top: 35px;
     margin-left: 550px;
 }
+
+body{
+    background-image: url("img/slika1.jpg" );
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}

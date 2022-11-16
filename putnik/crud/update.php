@@ -1,7 +1,7 @@
 <?php
 
 require('../../DB.php');
-require('../Putnik.php');
+require('../../putnik/Putnik.php');
 $db = new DB('domaci');
 
 $putnik = new Putnik();
