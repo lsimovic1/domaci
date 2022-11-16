@@ -19,7 +19,7 @@ $db = new DB('domaci');
     <tbody>
         <?php
 
-        $query = "select * from kompanija";
+        $query = "select * from voznja";
         $data = $db->connection->query($query);
 
         while ($row = $data->fetch_object()) :

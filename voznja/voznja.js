@@ -1,6 +1,8 @@
 $(document).ready(function () {
     prikaziVoznje();
     dodajVoznju();
+    obrisiVoznju();
+
 });
 
 function prikaziVoznje() {
@@ -52,5 +54,25 @@ function dodajVoznju() {
                     }
                 });
         }
+    })
+
+}
+
+function obrisiVoznju() {
+
+    $(document).on('click', '#btn_delete', function () {
+
+        var id = $(this).attr('value');
+
+        $.ajax({
+            url: 'crud/delete.php',
+            method: 'post',
+            data: { id: id },
+
+            success: function (data) {
+                $('#uspesnoObrisan').fadeIn().html(data).delay(1800).fadeOut('slow');
+                prikaziVoznje();
+            }
+        })
     })
 }
