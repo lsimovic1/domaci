@@ -5,7 +5,8 @@ $(document).ready(function () {
     vratiPutnika();
     azurirajPutnika();
     pretraga();
-
+    napuniSortTabelu();
+    sortiranje();
 });
 
 
@@ -156,4 +157,42 @@ function pretraga() {
         )
 
     })
+}
+
+function napuniSortTabelu() {
+    $.ajax(
+        {
+            url: 'pocetak.php',
+            success: function (data) {
+                {
+                    $('#tabelasort').html(data);
+                }
+            }
+        }
+    )
+}
+
+
+function sortiranje() {
+
+    $(document).on('click', 'th', function () {
+
+        let kolona = $(this).attr('id');
+        let sort = $(this).attr('name');
+
+        $.ajax(
+            {
+                url: 'sort.php',
+                method: 'post',
+                data: { kolona: kolona, sort: sort },
+                success: function (data) {
+                    {
+                        $('#tabelasort').html(data);
+                    }
+                }
+            }
+        )
+
+    })
+
 }
