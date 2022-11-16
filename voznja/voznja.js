@@ -2,6 +2,7 @@ $(document).ready(function () {
     prikaziVoznje();
     dodajVoznju();
     obrisiVoznju();
+    azurirajVoznju();
 
 });
 
@@ -75,4 +76,40 @@ function obrisiVoznju() {
             }
         })
     })
+}
+
+function azurirajVoznju() {
+
+    $(document).on('click', '#btn_update', function () {
+
+        var id = $('#voznja_id').val();
+        var naziv = $('#upd_naziv').val();
+        var pocetna = $('#upd_pocetna').val();
+        var krajnja = $('#upd_krajnja').val();
+        var vreme = $('#upd_vreme').val();
+
+
+        if (id == '' || naziv == '' || pocetna == '' || krajnja == '' || vreme == '') {
+            $('#upd_praznaPolja').slideDown().delay(1500).fadeOut('slow');
+        }
+        else {
+
+            $.ajax({
+                url: 'crud/update.php',
+                method: 'post',
+                data: {
+                    id: id,
+                    naziv: naziv,
+                    pocetna: pocetna,
+                    krajnja: krajnja,
+                    vreme: vreme,
+                },
+
+                success: function (data) {
+                    $('#upd_uspesnoSacuvan').fadeIn().html(data).delay(1800).fadeOut('slow');
+                    prikaziVoznje();
+                }
+            })
+        }
+    });
 }
