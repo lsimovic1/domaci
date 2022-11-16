@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2022 at 12:09 PM
+-- Generation Time: Nov 16, 2022 at 01:32 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -34,20 +34,6 @@ CREATE TABLE `putnik` (
   `voznja_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `voznja`
---
-
-CREATE TABLE `voznja` (
-  `id` int(11) NOT NULL,
-  `naziv` varchar(100) NOT NULL,
-  `pocetna` varchar(100) NOT NULL,
-  `krajnja` varchar(100) NOT NULL,
-  `vreme` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 --
 -- Indexes for dumped tables
 --
@@ -57,13 +43,17 @@ CREATE TABLE `voznja` (
 --
 ALTER TABLE `putnik`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `putnik_zaposleni_foreignkey` (`voznja_id`);
+  ADD KEY `voznja_id` (`voznja_id`);
 
 --
--- Indexes for table `voznja`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `voznja`
-  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for table `putnik`
+--
+ALTER TABLE `putnik`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -73,7 +63,7 @@ ALTER TABLE `voznja`
 -- Constraints for table `putnik`
 --
 ALTER TABLE `putnik`
-  ADD CONSTRAINT `putnik_ibfk_1` FOREIGN KEY (`voznja_id`) REFERENCES `voznja` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `putnik_fk` FOREIGN KEY (`voznja_id`) REFERENCES `voznja` (`id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
