@@ -18,7 +18,7 @@
 
         <div class="putnicidiv">
             <a href="putnik/index.php"><button class="btn btn-primary" id="crudputnici">Putnici</button></a>
-            <a href="putnik/pretraga/pretraga.php"><button class="btn btn-success" id="pretragaputnici">Pretraga putnika</button></a>
+            <a href="putnik/pretrazivanje/pretraga.php"><button class="btn btn-success" id="pretragaputnici">Pretraga putnika</button></a>
             <a href="putnik/sortiranje/sortiranje.php"><button class="btn btn-info" id="sortiranjeputnici">Sortiranje putnika</button></a>
             <a href="voznja/index.php"><button class="btn btn-danger" id="crudvoznja">Voznje</button></a>
         </div>

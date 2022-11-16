@@ -4,6 +4,8 @@ $(document).ready(function () {
     obrisiPutnika();
     vratiPutnika();
     azurirajPutnika();
+    pretraga();
+
 });
 
 
@@ -132,4 +134,26 @@ function azurirajPutnika() {
             })
         }
     });
+}
+
+function pretraga() {
+
+    $(document).on('keyup', '#bar', function () {
+
+        var key = this.value;
+
+        $.ajax(
+            {
+                url: 'search.php',
+                method: 'post',
+                data: { key: key },
+                success: function (data) {
+                    {
+                        $('#searchtabela').html(data);
+                    }
+                }
+            }
+        )
+
+    })
 }
