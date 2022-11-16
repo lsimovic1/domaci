@@ -11,7 +11,7 @@ $putnik->prezime = $_POST['prezime'];
 $putnik->voznja_id = $_POST['voznja'];
 
 $query = "update putnik set ime='$putnik->ime', prezime='$putnik->prezime',  
-                voznja_id='$putnik->voznja_id' where id=$putnik->id";
+                voznja_id='$putnik->voznja_id' where id='$putnik->id'";
 $db->connection->query($query);
 
 if ($db) {

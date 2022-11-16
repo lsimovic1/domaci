@@ -47,7 +47,7 @@ function dodajPutnika() {
                         $('#praznaPolja').hide();
                         $('#uspesnoSacuvan').fadeIn().html(data).delay(1800).fadeOut('slow');
 
-                        prikaziZaposlene();
+                        prikaziPutnike();
 
                         $('#addime').val('');
                         $('#addprezime').val('');
