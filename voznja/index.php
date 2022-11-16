@@ -99,7 +99,7 @@
                             <input type="text" class="form-control" id="upd_pocetna">
                         </div>
                         <div class="mb-2">
-                            <label for="upd_krjanja" class="form-label">Krajnja destinacija: </label>
+                            <label for="upd_krajnja" class="form-label">Krajnja destinacija: </label>
                             <input type="text" class="form-control" id="upd_krajnja">
                         </div>
                         <div class="mb-2">

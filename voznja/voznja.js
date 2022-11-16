@@ -2,6 +2,8 @@ $(document).ready(function () {
     prikaziVoznje();
     dodajVoznju();
     obrisiVoznju();
+    vratiVoznju();
+
     azurirajVoznju();
 
 });
@@ -112,4 +114,30 @@ function azurirajVoznju() {
             })
         }
     });
+}
+
+function vratiVoznju() {
+
+    $(document).on('click', '#btn_edit', function () {
+
+        var id = $(this).attr('value');
+
+        $.ajax({
+            url: 'crud/get.php',
+            method: 'post',
+            data: { id: id },
+            dataType: 'json',
+
+            success: function (data) {
+                $('#izmenaVoznje').modal('show');
+                $('#voznja_id').val(data.id);
+                $('#upd_naziv').val(data.ime);
+                $('#upd_pocetna').val(data.pocetna);
+                $('#upd_krajnja').val(data.krjnja);
+                $('#upd_vreme').val(data.vreme);
+
+            }
+        });
+    })
+
 }
