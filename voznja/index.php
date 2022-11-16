@@ -8,5 +8,70 @@
 </head>
 <body>
     
+    <div class="container">
+        <div class="grupa">
+            <button id="dodajVoznju" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#novaVoznja" style="width:250px; margin-left:450px;">Nova voznja</button>
+
+            <div class="alert alert-success collapse text-center" role="alert" id="uspesnoObrisan">
+
+            </div>
+
+            <div id="tabelaVoznja">
+            </div>
+        </div>
+
+
+        <!-- Modal nova kompanija -->
+        <div class="modal fade" id="novaVoznja" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel" style="padding-left: 180px;">Voznja</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger collapse text-center" role="alert" id="praznaPolja">
+                            Sva polja moraju biti popunjena!
+                        </div>
+
+                        <div class="alert alert-success collapse text-center" role="alert" id="uspesnoSacuvan">
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="addnaziv" class="form-label">Naziv kompanije: </label>
+                            <input type="text" class="form-control" id="addnaziv">
+                        </div>
+                        <div class="mb-2">
+                            <label for="addpocetna" class="form-label">Pocetna lokacija: </label>
+                            <input type="text" class="form-control" id="addpocetna">
+                        </div>
+                        <div class="mb-2">
+                            <label for="addkrajnja" class="form-label">Krajnja lokacija: </label>
+                            <input type="text" class="form-control" id="addkrajnja">
+                        </div>
+                        <div class="mb-2">
+                            <label for="addvreme" class="form-label">Vreme: </label>
+                            <input type="date" class="form-control" id="addvreme">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btn_save" class="btn btn-primary" style="margin-right:170px;">Sacuvaj</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+
+
+
+
+
+    </div>
+
+
+
 </body>
 </html>
