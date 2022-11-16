@@ -131,9 +131,9 @@ function vratiVoznju() {
             success: function (data) {
                 $('#izmenaVoznje').modal('show');
                 $('#voznja_id').val(data.id);
-                $('#upd_naziv').val(data.ime);
+                $('#upd_naziv').val(data.naziv);
                 $('#upd_pocetna').val(data.pocetna);
-                $('#upd_krajnja').val(data.krjnja);
+                $('#upd_krajnja').val(data.krajnja);
                 $('#upd_vreme').val(data.vreme);
 
             }
