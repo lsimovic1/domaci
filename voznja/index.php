@@ -8,6 +8,11 @@
 </head>
 <body>
     
+        <?php
+        include('../DB.php');
+        $db = new DB('domaci');
+        ?>
+
     <div class="container">
         <div class="grupa">
             <button id="dodajVoznju" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#novaVoznja" style="width:250px; margin-left:450px;">Nova voznja</button>
@@ -20,8 +25,10 @@
             </div>
         </div>
 
+ 
 
-        <!-- Modal nova kompanija -->
+
+        <!-- Nova kompanija -->
         <div class="modal fade" id="novaVoznja" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
