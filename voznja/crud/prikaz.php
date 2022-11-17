@@ -4,7 +4,7 @@ require "../../DB.php";
 $db = new DB('domaci');
 ?>
 
-<table class="table table-bordered mt-2">
+<table class="table table-bordered mt-2" table style="background-color:white">
     <thead>
         <tr class="text-center">
             <th>ID</th>

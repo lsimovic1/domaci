@@ -29,8 +29,3 @@ h1 {
     border-radius: 25px;
 }
 
-body{
-    background-image: url("img/a.jpg" );
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-}
