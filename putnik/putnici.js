@@ -108,7 +108,7 @@ function azurirajPutnika() {
     $(document).on('click', '#btn_update', function () {
 
 
-        var id = $('#voznja_id').val();
+        var id = $('#putnik_id').val();
         var ime = $('#upd_ime').val();
         var prezime = $('#upd_prezime').val();
         var voznja = $('#upd_voznja').val();

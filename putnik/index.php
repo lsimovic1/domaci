@@ -116,7 +116,9 @@
 
                                     while ($row = $data->fetch_object()) :
                                     ?>
-                                        <option value="<?php echo $row->id; ?>"><?php echo $row->naziv; ?></option>
+                                        <option value="<?php echo $row->id; ?>"><?php echo $row->naziv; ?>
+                                    <?php echo ": "; ?><?php echo $row->pocetna; ?><?php echo "-"; ?><?php echo $row->krajnja; ?>
+                                    <?php echo ": "; ?><?php echo $row->vreme; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>

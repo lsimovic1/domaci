@@ -8,7 +8,7 @@ $sort = $_POST['sort'];
 ?>
 
 
-<table class="table table-bordered mt-2">
+<table class="table table-bordered mt-2" table style="background-color:white">
     <thead>
         <tr class="text-center">
             <th id="id" name="<?php if ($kolona == 'id' && $sort == 'asc') {
